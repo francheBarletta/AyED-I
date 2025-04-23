@@ -1,4 +1,5 @@
 --Ejercicio 1
+import Prelude hiding (Maybe, Nothing, Just)
 
 data Carrera = Matematica | Fisica | Computacion | Astronomia deriving (Eq)
 
@@ -36,7 +37,7 @@ minimoElemento' [] = maxBound
 minimoElemento' [x] = x
 minimoElemento' (x:xs) = min x (minimoElemento' xs)
 
---Ejercicio 3
+--Ejercicio 4
 
 --a)
 --Sinonimos de tipo
@@ -83,7 +84,7 @@ contar_futbolistas (_: xs) z = contar_futbolistas xs z
 --ghci> contar_futbolistas lista zona
 --1
 
---5)
+--Ejercicio 5
 --a)
 
 sonidoNatural :: NotaBasica -> Int
@@ -113,3 +114,20 @@ sonidoCromatico (Nota _ Natural) = 0
 --ghci> let nota = Nota Do Sostenido
 --ghci> sonidoCromatico nota
 --1
+
+--Ejercicio 6
+
+data Maybe a = Nothing | Just a deriving (Eq, Show)
+
+dividir :: Int -> Int -> Maybe Int
+dividir x 0 = Nothing
+dividir x y = Just (x `div` y)
+
+--ghci> dividir 10 2
+--5
+
+--a)
+
+primerElemento :: [a] -> Maybe a
+primerElemento [] = Nothing
+primerElemento (x:_) = Just x
