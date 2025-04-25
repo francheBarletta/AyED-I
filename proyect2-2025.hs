@@ -45,10 +45,10 @@ type Altura = Int
 type NumCamiseta = Int
 
 --Tipos algebraicos sin parametros (aka enumerado)
-data Zona = Arco | Defensa | Mediocampo | Delantera deriving (Eq)
-data TipoRevez = DosManos | UnaMano
-data Modalidad = Carrera | Pista | Monte | BMX
-data PiernaHabil =  Izquierda | Derecha
+data Zona = Arco | Defensa | Mediocampo | Delantera deriving (Eq, Show)
+data TipoRevez = DosManos | UnaMano deriving (Eq, Show)
+data Modalidad = Carrera | Pista | Monte | BMX deriving (Eq, Show)
+data PiernaHabil =  Izquierda | Derecha deriving (Eq, Show)
 
 --Sinonimo
 type ManoHabil = PiernaHabil
@@ -59,7 +59,7 @@ data Deportista = Ajedresista                                    -- Constructor 
                 | Velocista Altura                               -- Constructor con un argumento
                 | Tenista TipoRevez ManoHabil Altura             -- Constructor con tres argumentos
                 | Futbolista Zona NumCamiseta PiernaHabil Altura -- Constructor con cuatro argumentos
-
+                deriving (Eq, Show)
 
 --c)
 contar_velocistas :: [Deportista] -> Int
@@ -131,3 +131,24 @@ dividir x y = Just (x `div` y)
 primerElemento :: [a] -> Maybe a
 primerElemento [] = Nothing
 primerElemento (x:_) = Just x
+
+--Ejercicio 7
+
+data Cola = VaciaC | Encolada Deportista Cola deriving (Eq, Show)
+--a)
+
+atender :: Cola -> Maybe Cola
+atender VaciaC = Nothing
+atender (Encolada _ xs) = Just xs
+
+--ghci> let cola = Encolada Ajedresista (Encolada (Ciclista Pista) VaciaC)
+--ghci> atender cola
+--Just (Encolada (Ciclista Pista) VaciaC)
+
+encolar :: Deportista -> Cola -> Cola
+encolar d VaciaC = Encolada d VaciaC
+encolar d (Encolada x xs) = Encolada x (encolar d xs)
+
+--ghci> let cola = Encolada Ajedresista (Encolada (Ciclista Pista) VaciaC)
+--ghci> encolar (Tenista DosManos Izquierda 180) cola
+--Encolada Ajedresista (Encolada (Ciclista Pista) (Encolada (Tenista DosManos Izquierda 180) VaciaC))
