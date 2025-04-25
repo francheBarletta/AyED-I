@@ -152,3 +152,13 @@ encolar d (Encolada x xs) = Encolada x (encolar d xs)
 --ghci> let cola = Encolada Ajedresista (Encolada (Ciclista Pista) VaciaC)
 --ghci> encolar (Tenista DosManos Izquierda 180) cola
 --Encolada Ajedresista (Encolada (Ciclista Pista) (Encolada (Tenista DosManos Izquierda 180) VaciaC))
+
+buscar :: Deportista -> Cola -> Zona -> Maybe Deportista
+buscar _ VaciaC _ = Nothing
+buscar d (Encolada x xs) z
+  | d == x = Just x
+  | otherwise = buscar d xs z
+  
+--ghci> let cola = Encolada Ajedresista (Encolada (Ciclista Pista) VaciaC)
+--ghci> buscar Ajedresista cola Arco
+--Just Ajedresista
