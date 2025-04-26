@@ -179,7 +179,7 @@ la_long (Asoc _ _ xs) = 1 + la_long xs
 --2
  
 --b2)
-la:concat :: ListaAsoc a b -> ListaAsoc a b -> ListaAsoc a b
+la_concat :: ListaAsoc a b -> ListaAsoc a b -> ListaAsoc a b
 la_concat Vacia ys = ys
 la_concat xs Vacia = xs
 la_concat (Asoc x y xs) ys = Asoc x y (la_concat xs ys)
