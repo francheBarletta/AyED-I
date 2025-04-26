@@ -162,3 +162,77 @@ buscar d (Encolada x xs) z
 --ghci> let cola = Encolada Ajedresista (Encolada (Ciclista Pista) VaciaC)
 --ghci> buscar Ajedresista cola Arco
 --Just Ajedresista
+
+--Ejercicio 8
+
+data ListaAsoc a b = Vacia | Asoc a b (ListaAsoc a b)
+
+type Diccionario = ListaAsoc String String
+type Padron = ListaAsoc Int String
+
+--b1) 
+la_long :: ListaAsoc a b -> Int
+la_long Vacia = 0
+la_long (Asoc _ _ xs) = 1 + la_long xs
+--ghci> let lista = Asoc 1 "uno" (Asoc 2 "dos" Vacia)
+--ghci> la_long lista
+--2
+ 
+--b2)
+la:concat :: ListaAsoc a b -> ListaAsoc a b -> ListaAsoc a b
+la_concat Vacia ys = ys
+la_concat xs Vacia = xs
+la_concat (Asoc x y xs) ys = Asoc x y (la_concat xs ys)
+--ghci> let lista1 = Asoc 1 "uno" (Asoc 2 "dos" Vacia)
+--ghci> let lista2 = Asoc 3 "tres" (Asoc 4 "cuatro" Vacia)
+--ghci> la_concat lista1 lista2
+--Asoc 1 "uno" (Asoc 2 "dos" (Asoc 3 "tres" (Asoc 4 "cuatro" Vacia)))
+
+--b3)
+la_agregar :: Eq a => ListaAsoc a b -> a -> b -> ListaAsoc a b
+la_agregar Vacia k v = Asoc k v Vacia
+la_agregar (Asoc x y xs) k v
+  | x == k = Asoc x v xs
+  | otherwise = Asoc x y (la_agregar xs k v)
+--ghci> let lista = Asoc 1 "uno" (Asoc 2 "dos" Vacia)
+--ghci> la_agregar lista 2 "dos_modificado"
+--Asoc 1 "uno" (Asoc 2 "dos_modificado" Vacia)
+--ghci> la_agregar lista 3 "tres"
+--Asoc 1 "uno" (Asoc 2 "dos" (Asoc 3 "tres" Vacia))
+
+--b4)
+la_pares :: ListaAsoc a b -> [(a, b)]
+la_pares Vacia = []
+la_pares (Asoc x y xs) = (x, y) : la_pares xs
+--ghci> let lista = Asoc 1 "uno" (Asoc 2 "dos" Vacia)
+--ghci> la_pares lista
+--[(1,"uno"),(2,"dos")]
+--ghci> let lista = Asoc 1 "uno" (Asoc 2 "dos" (Asoc 3 "tres" Vacia))
+--ghci> la_pares lista
+--[(1,"uno"),(2,"dos"),(3,"tres")]
+--ghci> let lista = Asoc 1 "uno" (Asoc 2 "dos" (Asoc 3 "tres" Vacia))
+--ghci> la_pares lista
+--[(1,"uno"),(2,"dos"),(3,"tres")]
+
+--b5)
+la_buscar :: Eq a => ListaAsoc a b -> a -> Maybe b
+la_buscar Vacia _ = Nothing
+la_buscar (Asoc x y xs) k
+  | x == k = Just y
+  | otherwise = la_buscar xs k
+--ghci> let lista = Asoc 1 "uno" (Asoc 2 "dos" Vacia)
+--ghci> la_buscar lista 1
+--Just "uno"
+
+--b6)
+la_borrar :: Eq a => aa -> ListaAsoc a b -> ListaAsoc a b
+la_borrar _ Vacia = Vacia
+la_borrar k (Asoc x y xs)
+  | x == k = xs
+  | otherwise = Asoc x y (la_borrar k xs)
+--ghci> let lista = Asoc 1 "uno" (Asoc 2 "dos" Vacia)
+--ghci> la_borrar 1 lista
+--Asoc 2 "dos" Vacia
+--ghci> let lista = Asoc 1 "uno" (Asoc 2 "dos" (Asoc 3 "tres" Vacia))
+--ghci> la_borrar 2 lista
+--Asoc 1 "uno" (Asoc 3 "tres" Vacia)
