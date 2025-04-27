@@ -2,8 +2,6 @@
 ---- Examen Tema A ----
 ------------------------
 
-import Data.Kind (Type)
-
 --Ejercicio 1
 --a)
 
@@ -71,7 +69,7 @@ pelisDelDirector Vacia _ = Vacia
 pelisDelDirector (Encolada (Pelicula titulo director duracion año) xs) d 
     | director == d = Encolada (Pelicula titulo director duracion año) (pelisDelDirector xs d)
     | otherwise = pelisDelDirector xs d
-    
+
 --ghci> pelisDelDirector colaReproduccion "Francis Ford Coppola"
 --Encolada (Pelicula "El Padrino" "Francis Ford Coppola" 177 1972) Vacia
 --ghci> pelisDelDirector colaReproduccion "Otro Director"

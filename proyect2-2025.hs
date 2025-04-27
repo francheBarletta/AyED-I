@@ -1,3 +1,7 @@
+----------------
+-- Practico 2 --
+----------------
+
 --Ejercicio 1
 import Prelude hiding (Maybe, Nothing, Just)
 
@@ -225,7 +229,7 @@ la_buscar (Asoc x y xs) k
 --Just "uno"
 
 --b6)
-la_borrar :: Eq a => aa -> ListaAsoc a b -> ListaAsoc a b
+la_borrar :: Eq a => a -> ListaAsoc a b -> ListaAsoc a b
 la_borrar _ Vacia = Vacia
 la_borrar k (Asoc x y xs)
   | x == k = xs
