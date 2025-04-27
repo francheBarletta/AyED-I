@@ -36,11 +36,21 @@ esDelDirector :: Video -> String -> Bool
 esDelDirector (Pelicula _ director _ _) d = director == d
 esDelDirector (CapSerie _ _ _ _) _ = False
 
+--ghci> esDelDirector elPadrino "Francis Ford Coppola"
+--True
+--ghci> esDelDirector elPadrino "El Bananero"
+--False
+
 --d) 
 
 esActual :: Video -> Bool
 esActual (Pelicula _ _ _ anio) = anio >= 2020
 esActual (CapSerie _ _ _ anio) = anio >= 2020
+
+--ghci> esActual elPadrino 
+--False
+--ghci> esActual elPadrino 
+--False
 
 --e)
 
@@ -50,6 +60,10 @@ tiempoPelis (Pelicula _ _ duracion anio : xs) anioDado
     | anio == anioDado = duracion + tiempoPelis xs anioDado
     | otherwise = tiempoPelis xs anioDado
 tiempoPelis (_ : xs) anioDado = tiempoPelis xs anioDado
+
+--ghci> let videos = [elPadrino, odisea2001, breakingBadS01E01]
+--ghci> tiempoPelis videos 1972
+--177
 
 --Ejercicio 2
 
