@@ -67,12 +67,12 @@ data ColaAhorro = NoHayAhorro | HayAhorro Ahorro ColaAhorro
     deriving (Show, Eq)
 
 ahorrosJuan :: ColaAhorro
-ahorrosJuan = AgregarAhorro supermercadoUa (AgregarAhorro premioBna NoHayAhorro)
+ahorrosJuan = HayAhorro supermercadoUa (HayAhorro premioBna NoHayAhorro)
 
 buenosAhorros :: ColaAhorro -> ColaAhorro
 buenosAhorros NoHayAhorro = NoHayAhorro
-buenosAhorros (AgregarAhorro ahorro cola)
-    | esReintegro ahorro "BnaMas" = AgregarAhorro ahorro (buenosAhorros cola)
+buenosAhorros (HayAhorro ahorro cola)
+    | esReintegro ahorro "BnaMas" = HayAhorro ahorro (buenosAhorros cola)
     | otherwise = buenosAhorros cola
     
 --ghci> buenosAhorros ahorrosJuan
