@@ -20,8 +20,6 @@ int main () {
 
 /*
 Ingrese los valores de x, y (estado σ₀): 2 5
-Estado σ₁: x = 7
-, y = 5
-Estado σ₂: x = 7
-, y = 10
+Estado σ₁: x = 7, y = 5
+Estado σ₂: x = 7, y = 10
 */

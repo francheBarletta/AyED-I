@@ -12,3 +12,8 @@ int main () {
 
     return 0;
 }
+
+/*  
+Ingrese el valor de x (estado σ₀): 5
+Estado σ₁: x = 5
+*/
