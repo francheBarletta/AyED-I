@@ -1,4 +1,4 @@
-/* --Ejercicio 5a-- */
+/* --Ejercicio 1-- */
 
 #include <stdio.h>
 
@@ -22,7 +22,7 @@ int main() {
 
 /*
 gcc -Wall -Wextra -std=c99 -o assigments assigments.c   
-./assigments                                                                                      ──(Sat,May03)─┘
+./assigments
 result1: 11
 result2: 55
 result3: 0

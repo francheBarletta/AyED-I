@@ -1,3 +1,5 @@
+/* --Ejercicio 2-- */
+
 #include <stdio.h>
 #include <stdbool.h>
 
