@@ -21,3 +21,7 @@ int main () {
     return 0;
 }
 
+/*  
+Ingrese un entero'n': 1
+El valor almacenado en la variable 'n' es: 1
+*/
