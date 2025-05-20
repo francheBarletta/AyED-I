@@ -2,7 +2,7 @@
 #include <assert.h>
 
 int main(){
-    int x, y, z, temp;
+    int x, y, z;
     printf("Ingrese los valores de x, y, z: ");
     scanf("%d %d %d", &x, &y, &z);
 
