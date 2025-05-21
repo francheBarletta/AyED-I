@@ -1,3 +1,5 @@
+/* --P4 Ejercicio 1b-- */
+
 #include <stdio.h>
 #include <assert.h>
 
