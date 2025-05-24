@@ -3,7 +3,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-int main() {
+int main()
+{
     int x, y, z;
     int temp_b, temp_w;
     bool b, w;
@@ -32,7 +33,7 @@ int main() {
     return 0;
 }
 
-/*  
+/*
 Ingrese los valores de x, y, z (enteros) y b, w (booleanos) (0 para false, 1 para true):
 x: 1
 y: 2

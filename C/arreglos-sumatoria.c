@@ -3,7 +3,8 @@
 #include <stdio.h>
 #define N 5
 
-void pedir_arreglo(int tam, int a[]) {
+void pedir_arreglo(int tam, int a[])
+{
     int i = 0;
 
     while (i < tam)
@@ -12,10 +13,10 @@ void pedir_arreglo(int tam, int a[]) {
         scanf("%d", &a[i]);
         i++;
     }
-    
 }
 
-int sumatoria(int tam, int a[]) {
+int sumatoria(int tam, int a[])
+{
     int i = 0;
     int suma = 0;
 
@@ -23,11 +24,12 @@ int sumatoria(int tam, int a[]) {
     {
         suma += a[i];
         i++;
-        }
+    }
     printf("La suma de los elementos del arreglo es: %d\n", suma);
 }
 
-int main() {
+int main()
+{
     int a[N];
 
     pedir_arreglo(N, a);

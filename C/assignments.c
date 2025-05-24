@@ -2,9 +2,10 @@
 
 #include <stdio.h>
 
-int main() {
+int main()
+{
     int x = 7, y = 3, z = 5;
-    
+
     int result1 = x + y + 1;
     int resutl2 = z * z + y * 45 - 15 * x;
     int result3 = y - 2 == (x * 3 + 1) % 5;
@@ -21,11 +22,11 @@ int main() {
 }
 
 /*
-gcc -Wall -Wextra -std=c99 -o assigments assigments.c   
+gcc -Wall -Wextra -std=c99 -o assigments assigments.c
 ./assigments
 result1: 11
 result2: 55
 result3: 0
 result4: 7
-result5: 1  
+result5: 1
 */

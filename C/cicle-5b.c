@@ -2,7 +2,8 @@
 
 #include <stdio.h>
 
-int main () {
+int main()
+{
     int x, y, i;
 
     printf("Ingrese el valor de x: ");
@@ -12,7 +13,8 @@ int main () {
     printf("Ingrese el valor de i: ");
     scanf("%d", &i);
 
-    while(x >= y) {
+    while (x >= y)
+    {
         x = x - y;
         i = i + 1;
     }

@@ -3,7 +3,8 @@
 #include <stdio.h>
 #include <assert.h>
 
-int main () {
+int main()
+{
     int x, y, z;
     int X, Y, Z;
     printf("Ingrese los valores deseados para x, y, z: ");
@@ -11,7 +12,7 @@ int main () {
 
     X = x;
     Y = y;
-    Z = z;    
+    Z = z;
 
     int temp_x = x;
     int temp_y = y;
@@ -29,12 +30,11 @@ int main () {
     printf("z = %d\n", z);
 
     return 0;
-
 }
 
 /*
 Ingrese los valores deseados para x, y, z: 1 2 3
-Los nuevos valores son: 
+Los nuevos valores son:
 x = 2
 y = 6
 z = 3

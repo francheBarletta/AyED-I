@@ -3,7 +3,8 @@
 #include <stdio.h>
 #define N 5
 
-void pedir_arreglo(int n_max, int a[]) {
+void pedir_arreglo(int n_max, int a[])
+{
     int i = 0;
     while (i < n_max)
     {
@@ -11,10 +12,10 @@ void pedir_arreglo(int n_max, int a[]) {
         scanf("%d", &a[i]);
         i++;
     }
-    
 }
 
-void imprimir_arreglo(int n_max, int a[]) {
+void imprimir_arreglo(int n_max, int a[])
+{
     int i = 0;
     printf("Los valores ingresados fueron: \n");
 
@@ -22,12 +23,12 @@ void imprimir_arreglo(int n_max, int a[]) {
     {
         printf("%d", a[i]);
         i++;
-
     }
-    printf("\n");    
+    printf("\n");
 }
 
-void promedio_arreglo(int n_max, int a[]) {
+void promedio_arreglo(int n_max, int a[])
+{
     int i = 0;
     int suma = 0;
 
@@ -36,13 +37,13 @@ void promedio_arreglo(int n_max, int a[]) {
         suma += a[i];
         i++;
     }
-    
+
     float promedio = (float)suma / n_max;
     printf("El promedio del arreglo es:  %.2f\n", promedio);
-
 }
 
-int main() {
+int main()
+{
     int a[N];
 
     pedir_arreglo(N, a);
@@ -58,7 +59,7 @@ Ingrese 2 valores del arreglo: 2
 Ingrese 3 valores del arreglo: 3
 Ingrese 4 valores del arreglo: 4
 Ingrese 5 valores del arreglo: 5
-Los valores ingresados fueron: 
+Los valores ingresados fueron:
 12345
 El promedio del arreglo es:  3.00
 */

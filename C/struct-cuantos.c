@@ -4,22 +4,30 @@
 
 #define N 5
 
-struct comp_t {
+struct comp_t
+{
     int menores;
     int iguales;
     int mayores;
 };
 
-struct comp_t cuantos(int tam, int a[], int elem) {
-    struct comp_t resultado = {0 ,0 ,0};
+struct comp_t cuantos(int tam, int a[], int elem)
+{
+    struct comp_t resultado = {0, 0, 0};
     int i = 0;
 
-    while(i < tam) {
-        if (a[i] < elem) {
+    while (i < tam)
+    {
+        if (a[i] < elem)
+        {
             resultado.menores++;
-        } else if (a[i] == elem) {
+        }
+        else if (a[i] == elem)
+        {
             resultado.iguales++;
-        } else {
+        }
+        else
+        {
             resultado.mayores++;
         }
         i++;
@@ -27,12 +35,14 @@ struct comp_t cuantos(int tam, int a[], int elem) {
     return resultado;
 }
 
-int main() {
+int main()
+{
     int a[N];
     int i = 0;
     int numero;
 
-    while(i < N){
+    while (i < N)
+    {
         printf("Elemento %d: ", i);
         scanf("%d", &a[i]);
         i++;

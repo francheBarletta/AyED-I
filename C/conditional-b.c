@@ -2,7 +2,8 @@
 
 #include <stdio.h>
 
-int main() {
+int main()
+{
 
     int x, y, z, m;
 
@@ -11,20 +12,22 @@ int main() {
     printf("Ingresa el valor de y: ");
     scanf("%d", &y);
 
-    if(x < y) {
+    if (x < y)
+    {
         m = x;
-    } else {
+    }
+    else
+    {
         m = y;
     }
 
     printf("El valor de M es: %d\n", m);
 
     return 0;
-
 }
 
 /*
-Ingresa el valor de x: 2               
+Ingresa el valor de x: 2
 Ingresa el valor de y: 1
 El valor de M es: 1
 */

@@ -3,22 +3,24 @@
 #include <stdio.h>
 #include <assert.h>
 
-
-void hola_hasta(int n) {
+void hola_hasta(int n)
+{
     int i = 0;
-    while(i < n) {
+    while (i < n)
+    {
         printf("Hola\n");
         i++;
     }
 }
-    
-int main() {
+
+int main()
+{
     int x;
-    
+
     printf("Ingrese la cantidad de Hola's: ");
     scanf("%d", &x);
 
-    assert (x > 0);
+    assert(x > 0);
 
     hola_hasta(x);
 

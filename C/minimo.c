@@ -3,7 +3,8 @@
 #include <stdio.h>
 #include <assert.h>
 
-int main () {
+int main()
+{
     int x, y, m;
 
     printf("Ingrese dos enteros: ");
@@ -11,9 +12,12 @@ int main () {
 
     assert(1);
 
-    if(x <=  y) {
+    if (x <= y)
+    {
         m = x;
-    } else {
+    }
+    else
+    {
         m = x;
     }
 

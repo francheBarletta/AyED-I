@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-int main() {
+int main()
+{
     int edad;
     float nota;
     bool beca;
@@ -17,28 +18,48 @@ int main() {
 
     printf("\nResultado:\n");
 
-    if (edad < 18) {
-        if (nota >= 8.5 && beca) {
+    if (edad < 18)
+    {
+        if (nota >= 8.5 && beca)
+        {
             printf("Estudiante menor de edad con excelente rendimiento y beca.\n");
-        } else if (nota >= 8.5) {
+        }
+        else if (nota >= 8.5)
+        {
             printf("Estudiante menor de edad con excelente rendimiento, sin beca.\n");
-        } else if (nota >= 6) {
+        }
+        else if (nota >= 6)
+        {
             printf("Estudiante menor de edad con rendimiento aceptable.\n");
-        } else {
+        }
+        else
+        {
             printf("Estudiante menor de edad con rendimiento bajo.\n");
         }
-    } else if (edad <= 25) {
-        if (nota >= 9 && beca) {
+    }
+    else if (edad <= 25)
+    {
+        if (nota >= 9 && beca)
+        {
             printf("Estudiante joven destacado con beca.\n");
-        } else if (nota < 4) {
+        }
+        else if (nota < 4)
+        {
             printf("Estudiante joven en situación crítica.\n");
-        } else {
+        }
+        else
+        {
             printf("Estudiante joven promedio.\n");
         }
-    } else {
-        if (!beca && nota < 5) {
+    }
+    else
+    {
+        if (!beca && nota < 5)
+        {
             printf("Estudiante adulto sin beca y bajo rendimiento.\n");
-        } else {
+        }
+        else
+        {
             printf("Estudiante adulto.\n");
         }
     }

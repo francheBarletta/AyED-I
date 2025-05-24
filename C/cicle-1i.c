@@ -2,14 +2,16 @@
 
 #include <stdio.h>
 
-int main () {
+int main()
+{
 
     int i;
 
     printf("Ingrese el valor de i: ");
     scanf("%d", &i);
 
-    while (i != 0) {
+    while (i != 0)
+    {
         printf("Estado actual de i: %d\n", i);
         i = 0;
     }

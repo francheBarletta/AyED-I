@@ -2,7 +2,8 @@
 
 #include <stdio.h>
 
-int main () {
+int main()
+{
     int x, y;
 
     printf("Ingrese los valores de x, y (estado σ₀): ");
@@ -17,7 +18,6 @@ int main () {
     printf("Estado σ₂: x = %d\n, y = %d\n", x, y);
 
     return 0;
-
 }
 
 /*

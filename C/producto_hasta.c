@@ -3,18 +3,21 @@
 #include <stdio.h>
 #include <assert.h>
 
-int producto_hasta(int n) {
+int producto_hasta(int n)
+{
     int i = 1;
     int producto = 1;
 
-    while(i <= n) {
+    while (i <= n)
+    {
         producto = producto * i;
         i++;
     }
-return producto;
+    return producto;
 }
 
-int main() {
+int main()
+{
     int n;
     printf("Ingrese un numero positivo: ");
     scanf("%d", &n);

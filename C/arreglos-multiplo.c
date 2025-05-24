@@ -4,7 +4,8 @@
 #include <stdbool.h>
 #define N 5
 
-bool todos_pares(int tam, int a[]){
+bool todos_pares(int tam, int a[])
+{
     int i = 0;
     while (i < tam)
     {
@@ -17,11 +18,13 @@ bool todos_pares(int tam, int a[]){
     return false;
 }
 
-bool existe_multiplo(int m, int tam, int a[]) {
+bool existe_multiplo(int m, int tam, int a[])
+{
     int i = 0;
     while (i < tam)
     {
-        if (a[i] % m == 0) {
+        if (a[i] % m == 0)
+        {
             return true;
         }
         i++;
@@ -29,7 +32,8 @@ bool existe_multiplo(int m, int tam, int a[]) {
     return false;
 }
 
-int main() {
+int main()
+{
     int a[N];
 
     int i = 0;
@@ -41,25 +45,30 @@ int main() {
         i++;
     }
 
-    if (todos_pares(N, a)) {
+    if (todos_pares(N, a))
+    {
         printf("Todos los elementos del arreglo son pares: Verdadero.\n");
-    } else {
+    }
+    else
+    {
         printf("Hay al menos un elemento impar: False.\n");
     }
-
 
     int m;
 
     printf("Ingrese el valor de m, el mismodebe ser multiplo de algun elemento del arreglo: ");
     scanf("%d", &m);
 
-    if (existe_multiplo(m, N, a)) {
+    if (existe_multiplo(m, N, a))
+    {
         printf("Hay al menos un elemento multiplo de m: True\n");
-    } else {
+    }
+    else
+    {
         printf("NO hay elementos multiplos de m: False\n");
     }
-    
-return 0;
+
+    return 0;
 }
 
 /*

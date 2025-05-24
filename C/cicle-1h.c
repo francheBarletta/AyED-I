@@ -2,10 +2,12 @@
 
 #include <stdio.h>
 
-int main () {
+int main()
+{
     int i = 4;
 
-    while (i != 0) {
+    while (i != 0)
+    {
         printf("Valor actual de i: %d\n", i);
         i = i - 1;
     }

@@ -4,21 +4,27 @@
 #include <stdbool.h>
 #define N 5
 
-bool todos_positivos(int tam, int a[]) {
+bool todos_positivos(int tam, int a[])
+{
     int i = 0;
-    while(i < tam) {
-        if (a[i] < 0 ) {
-             return false;
+    while (i < tam)
+    {
+        if (a[i] < 0)
+        {
+            return false;
         }
         i++;
     }
     return true;
 }
 
-bool existe_negativo(int tam, int a[]){
+bool existe_negativo(int tam, int a[])
+{
     int i = 0;
-    while(i < tam) {
-        if (a[i] < 0) {
+    while (i < tam)
+    {
+        if (a[i] < 0)
+        {
             return true;
         }
         i++;
@@ -26,29 +32,36 @@ bool existe_negativo(int tam, int a[]){
     return false;
 }
 
-int main() {
+int main()
+{
     int a[N];
     int i = 0;
-    while(i < N){
+    while (i < N)
+    {
         printf("Elemento %d: ", i + 1);
         scanf("%d", &a[i]);
         i++;
     }
 
-    if (todos_positivos(N, a)) {
+    if (todos_positivos(N, a))
+    {
         printf("Todos los elementos son positivos.\n");
-    } else {
+    }
+    else
+    {
         printf("Hay almenos un elemento negativo.\n");
     }
 
-    if (existe_negativo(N, a)) {
+    if (existe_negativo(N, a))
+    {
         printf("Existe al menos un negativo.\n");
-    } else {
+    }
+    else
+    {
         printf("No hay elementos negativos.\n");
     }
 
-return 0;
-
+    return 0;
 }
 
 /*

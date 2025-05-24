@@ -3,7 +3,8 @@
 #include <stdio.h>
 #include <assert.h>
 
-int main () {
+int main()
+{
     int x, y;
     int X, Y;
 
@@ -12,7 +13,7 @@ int main () {
 
     X = x;
     Y = y;
-    
+
     int temp = x;
     x = x + 1;
     y = temp + y;
@@ -28,7 +29,7 @@ int main () {
 
 /*
 Ingrese los valores de x, y: 1 2
-Los nuevos valores son: 
+Los nuevos valores son:
 x = 2
 y = 3
 */

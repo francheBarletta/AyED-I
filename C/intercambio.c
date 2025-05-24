@@ -3,7 +3,8 @@
 #include <stdio.h>
 #include <assert.h>
 
-int main(){
+int main()
+{
     int x, y, z;
     printf("Ingrese los valores de x, y, z: ");
     scanf("%d %d %d", &x, &y, &z);
@@ -26,7 +27,7 @@ int main(){
 }
 /*
 Ingrese los valores de x, y, z: 1 2 3
-Despues del intercambio: 
+Despues del intercambio:
 x = 2
 y = 1
 z = 1

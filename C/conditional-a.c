@@ -2,7 +2,8 @@
 
 #include <stdio.h>
 
-int main () {
+int main()
+{
 
     int x, y;
 
@@ -11,14 +12,16 @@ int main () {
     printf("Ingresa el valor de y: ");
     scanf("%d", &y);
 
-    if(x >= y) {
+    if (x >= y)
+    {
         printf("X es mayor a Y.\n");
-    } else {
+    }
+    else
+    {
         printf("Y es mayor a X.\n");
     }
 
     return 0;
-
 }
 
 /*
