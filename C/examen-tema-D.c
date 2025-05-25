@@ -6,11 +6,13 @@
 
 #define N 5
 
-void llena_con_char(char a[], int tam){
+void llena_con_char(char a[], int tam)
+{
     int i = 0;
     char letra;
 
-    while(i < tam) {
+    while (i < tam)
+    {
         printf("Ingrese las letras deseadas: ", i + 1);
         scanf(" %c", &letra);
         a[i] = letra;
@@ -18,14 +20,18 @@ void llena_con_char(char a[], int tam){
     }
 }
 
-bool hay_mas_de_2_consonantes(char a[], int tam){
+bool hay_mas_de_2_consonantes(char a[], int tam)
+{
     int i = 0;
     int contar = 0;
 
-    while(i < tam){
-        if(a[i] != 'a' && a[i] != 'e' && a[i] != 'i' && a[i] != 'o' && a[i] != 'u'){
+    while (i < tam)
+    {
+        if (a[i] != 'a' && a[i] != 'e' && a[i] != 'i' && a[i] != 'o' && a[i] != 'u')
+        {
             contar++;
-            if(a[i] >= 3){
+            if (a[i] >= 3)
+            {
                 return true;
             }
         }
@@ -34,7 +40,8 @@ bool hay_mas_de_2_consonantes(char a[], int tam){
     return false;
 }
 
-int main(){
+int main()
+{
 
     // ===== Parte 1: Examen Tema D =====
 
@@ -66,9 +73,12 @@ int main(){
 
     bool hay = hay_mas_de_2_consonantes(a, N);
 
-    if (hay) {
+    if (hay)
+    {
         printf("Hay mas de 2 consonantes.\n");
-    } else {
+    }
+    else
+    {
         printf("NO hay mas de 2 consonantes.\n");
     }
 
@@ -77,7 +87,7 @@ int main(){
 
 /*
 Ingrese los valores de x, y, z:1 2 3
-Los valores resultado son: 
+Los valores resultado son:
 x: 2
 y: 0
 z: 5

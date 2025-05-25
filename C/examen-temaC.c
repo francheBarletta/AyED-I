@@ -1,4 +1,4 @@
-/* --Examen Tema C - file 1 -- */
+/* --Examen Tema C -- */
 
 #include <stdio.h>
 #include <stdbool.h>
@@ -7,9 +7,11 @@
 #define N 5
 
 // Función para llenar el arreglo de temperaturas
-void llenar_con_temperaturas(float a[], int tam) {
+void llenar_con_temperaturas(float a[], int tam)
+{
     int i = 0;
-    while(i < tam){
+    while (i < tam)
+    {
         printf("Ingrese una temperatura %d\n: ", i + 1);
         scanf("%f", &a[i]);
         i++;
@@ -17,13 +19,17 @@ void llenar_con_temperaturas(float a[], int tam) {
 }
 
 // Función para verificar si hay al menos 3 temperaturas altas
-bool hay_mas_de_2_altas(float a[], int tam) {
+bool hay_mas_de_2_altas(float a[], int tam)
+{
     int i = 0;
     int contar = 0;
-    while(i < tam){
-        if(a[i] > 30.00 && a[i] < 45.00) {
+    while (i < tam)
+    {
+        if (a[i] > 30.00 && a[i] < 45.00)
+        {
             contar++;
-            if (contar >= 3) {
+            if (contar >= 3)
+            {
                 return true;
             }
         }
@@ -32,13 +38,14 @@ bool hay_mas_de_2_altas(float a[], int tam) {
     return false;
 }
 
-int main() {
+int main()
+{
     // ===== Parte 1: Examen Tema C =====
     int x, y, z;
     int X, Y, Z;
 
     printf("Ingrese los valores de x, y, z: ");
-    scanf("%d %d %d", &x, &y, &z); 
+    scanf("%d %d %d", &x, &y, &z);
 
     X = x;
     Y = y;
@@ -65,19 +72,21 @@ int main() {
 
     bool hay = hay_mas_de_2_altas(a, N);
 
-    if(hay) {
+    if (hay)
+    {
         printf("Hay 3 o mas temperaturas que cumplen: \n");
-    } else {
+    }
+    else
+    {
         printf("Hay 3 o mas temperaturas que no cumplen: \n");
     }
 
     return 0;
 }
 
-
 /*
 Ingrese los valores de x, y, z: 1 2 3
-Los nuevos valroes son: 
+Los nuevos valroes son:
 x = 5
 y = 3
 z = 0
@@ -94,5 +103,5 @@ Ingrese una temperatura 4
 : 35.00
 Ingrese una temperatura 5
 : 35.00
-Hay 3 o mas temperaturas que cumplen: 
+Hay 3 o mas temperaturas que cumplen:
 */
