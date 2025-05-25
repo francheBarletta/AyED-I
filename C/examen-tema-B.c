@@ -70,9 +70,12 @@ int main()
 
     bool hay = hay_mas_de_3_aprobados(a, N);
 
-    if(hay) {
+    if (hay)
+    {
         printf("NO hay mas de 3 aprobados: %d\n");
-    } else {
+    }
+    else
+    {
         printf("Hay mas de 3 aprobados: %d\n");
     }
 
@@ -86,7 +89,7 @@ i: 2
 j: 6
 k: 3
 
-Elemento 0: 1        
+Elemento 0: 1
 Elemento 1: 2
 Elemento 2: 6
 Elemento 3: 7
