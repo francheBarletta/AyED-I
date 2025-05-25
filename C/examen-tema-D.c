@@ -79,7 +79,7 @@ int main()
     }
     else
     {
-        printf("NO hay mas de 2 consonantes.\n");
+        printf("NO hay mas de 2 consonantes.\nonda a ");
     }
 
     return 0;
