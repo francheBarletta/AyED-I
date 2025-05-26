@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include <assert.h>
+#include <stdbool.h>
+#define T 5
+
+bool todos_pares(int a[], int tam, int pos1, int pos2);
+
+int pedir_entero(int *pos1, int *pos2)
+{
+    printf("\nIngrese un numero entero para pos1:\n");
+    scanf("%d", pos1);
+    printf("\nIngrese un valor para pos2:\n");
+    scanf("%d", pos2);
+    assert(*pos1 < *pos2);
+    assert(*pos1 >= 0 && *pos1 < T && *pos2 >= 0 && *pos2 < T);
+}
+
+bool todos_pares(int a[], int tam, int pos1, int pos2)
+{
+    for (int i = 0; i < tam; i++)
+    {
+        if (i >= pos1 && i <= pos2)
+        {
+            if (a[i] % 2 != 0)
+            {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+int main(void)
+{
+    int arreglo[T];
+    int pos1, pos2;
+    for (int i = 0; i < T; i++)
+    {
+        printf("ingresa un valor para el indice %d:\n", i);
+        scanf("%d", &arreglo[i]);
+    }
+    pedir_entero(&pos1, &pos2);
+
+    bool res = todos_pares(arreglo, T, pos1, pos2);
+    if (res)
+    {
+        printf("\ntrue\n");
+    }
+    else
+    {
+        printf("\nfalse\n");
+    }
+
+    return 0;
+}
+/*
+ingresa un entero para el indice 0:
+3
+ingresa un entero para el indice 1:
+5
+ingresa un entero para el indice 2:
+4
+ingresa un entero para el indice 3:
+25
+ingresa un entero para el indice 4:
+77
+ingresa un valor para la pos1
+2
+ingresa un valor para la pos2
+5
+
+False
+*/
