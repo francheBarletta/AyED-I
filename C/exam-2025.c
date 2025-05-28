@@ -88,3 +88,19 @@ int main()
 
     return 0;
 }
+
+/*
+Ingrese 5 valores:
+Valor 1: 1
+Valor 2: 2
+Valor 3: 3
+Valor 4: 4
+Valor 5: 5
+Resultado: -3
+Ingrese vida: 2
+Ingrese ataque: 3
+Ingrese defensa: 1
+Personaje creado - Vida: 2, Ataque: 3, Defensa: 1
+Ingrese un valor de vida para comparar: 1
+El personaje tiene más vida que 1
+*/
